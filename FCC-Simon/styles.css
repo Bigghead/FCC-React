@@ -1,0 +1,21 @@
+.container{
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.firstRow{
+    display: flex;
+}
+
+.secondRow{
+    display: flex;
+}
+
+.box{
+    border: 2px solid red;
+    width: 100px;
+    height: 100px;
+}
