@@ -15,7 +15,30 @@
 }
 
 .box{
-    border: 2px solid red;
     width: 100px;
     height: 100px;
+}
+
+.red{
+    background-color: rgba(210, 60 , 80 , .8);
+}
+
+.blue{
+    background-color: rgba(0, 153, 255 , .8);
+}
+
+.green{
+    background-color: rgba(57, 213, 101, .8);
+}
+
+.yellow{
+    background-color: rgba(252, 154, 1 , .8);
+}
+
+.faded{
+    opacity: .7
+}
+
+.lit{
+    opacity: 1
 }

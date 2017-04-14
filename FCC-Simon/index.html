@@ -16,6 +16,50 @@
     <script src="https://fb.me/react-dom-0.14.7.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
     <script src='app.js' type='text/babel'></script>
+
+    <script>
+        (function () {
+            'use strict';
+
+            var hasOwn = {}.hasOwnProperty;
+
+            function classNames() {
+                var classes = [];
+
+                for (var i = 0; i < arguments.length; i++) {
+                    var arg = arguments[i];
+                    if (!arg) continue;
+
+                    var argType = typeof arg;
+
+                    if (argType === 'string' || argType === 'number') {
+                        classes.push(arg);
+                    } else if (Array.isArray(arg)) {
+                        classes.push(classNames.apply(null, arg));
+                    } else if (argType === 'object') {
+                        for (var key in arg) {
+                            if (hasOwn.call(arg, key) && arg[key]) {
+                                classes.push(key);
+                            }
+                        }
+                    }
+                }
+
+                return classes.join(' ');
+            }
+
+            if (typeof module !== 'undefined' && module.exports) {
+                module.exports = classNames;
+            } else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+                // register as 'classnames', consistent with npm package name
+                define('classnames', [], function () {
+                    return classNames;
+                });
+            } else {
+                window.classNames = classNames;
+            }
+        }());
+    </script>
 </body>
 
 </html>
